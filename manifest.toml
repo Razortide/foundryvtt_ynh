@@ -68,8 +68,8 @@ ram.runtime = "2G"
     #    ynh_setup_source --dest_dir="$install_dir"
     # You can also define other assets than "main" and add --source_id="foobar" in the previous command
     prefetch = false
-    url = "\$foundry_url"
-    sha256 = "curl -s \$foundry_url|sha256sum"
+    url = $foundry_url
+    sha256 = curl -s $foundry_url|sha256sum
 
     # These infos are used by https://github.com/YunoHost/apps_tools/blob/main/autoupdate_app_sources/autoupdate_app_sources.py
     # to auto-update the previous asset urls and sha256sum + manifest version
