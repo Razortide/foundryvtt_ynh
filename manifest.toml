@@ -43,7 +43,7 @@ ram.runtime = "2G"
     type = "path"
     default = "/example"
 
-    [install.foundry_url]
+    [install.url]
     # The installation of FoundryVTT requires a Timed URL provided by the admin to download the application
     ask.en = "Provide the FoundryVTT Timed URL"
     ask.fr = "Entrez l'URL chronométrée du FoundryVTT"
@@ -74,7 +74,7 @@ ram.runtime = "2G"
     # This will pre-fetch the asset which can then be deployed during the install/upgrade scripts with :
     #    ynh_setup_source --dest_dir="$install_dir"
     # You can also define other assets than "main" and add --source_id="foobar" in the previous command
-    url = [install.foundry_url] 
+    #url = [install.foundry_url] 
 
     # These infos are used by https://github.com/YunoHost/apps_tools/blob/main/autoupdate_app_sources/autoupdate_app_sources.py
     # to auto-update the previous asset urls and sha256sum + manifest version
@@ -93,11 +93,6 @@ ram.runtime = "2G"
     [resources.data_dir]
     # This will create/remove the data dir as /home/yunohost.app/$app
     # and store the corresponding setting $data_dir
-
-    [resources.permissions]
-    # This will configure SSOwat permission for $domain/$path/
-    # The initial allowed group of user is configured via the init_main_permission question (public=visitors, private=all_users)
-    main.url = "/"
 
     [resources.ports]
     # This will pick a random port for reverse-proxying and store it as the $port setting
