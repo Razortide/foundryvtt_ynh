@@ -33,9 +33,6 @@ disk = "1G"
 ram.build = "2G"
 ram.runtime = "2G"
 
-[arguments]
-foundry_url = { type = "string", label.en = "Enter the Foundry VTT Timed URL:", label.fr = "Entrez l'URL chronométrée du Foundry VTT", label.de = "Gib die Foundry VTT Timed URL ein",  example = "https://r2.foundryvtt.com/releases/12.331/FoundryVTT-12.331.zip?verify=1234567890-Elkadsn7sbJbsdkbds9fskjbfd&snu" }
-
 [install]
     [install.domain]
     # this is a generic question - ask strings are automatically handled by YunoHost's core
@@ -45,6 +42,13 @@ foundry_url = { type = "string", label.en = "Enter the Foundry VTT Timed URL:", 
     # this is a generic question - ask strings are automatically handled by YunoHost's core
     type = "path"
     default = "/example"
+
+    [install.foundry_url]
+    # The installation of FoundryVTT requires a Timed URL provided by the admin to download the application
+    ask.en = "Provide the FoundryVTT Timed URL"
+    ask.fr = "Entrez l'URL chronométrée du FoundryVTT"
+    ask.de = "Gib die FoundryVTT Timed URL ein"
+    type = "string"
 
     [install.init_main_permission]
     # this is a generic question - ask strings are automatically handled by YunoHost's core
