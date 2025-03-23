@@ -64,18 +64,6 @@ ram.runtime = "2G"
     choices = ["fr", "en", "de"]
     default = "en"
 
-    [install.admin]
-    # this is a generic question - ask strings are automatically handled by YunoHost's core
-    type = "user"
-
-    [install.password]
-    # this is a generic question - ask strings are automatically handled by YunoHost's core
-    # Note that user-provided passwords questions are not automatically saved as setting
-    help.en = "Sets the admin password."
-    help.fr = "Définit le mot de passe Admin"
-    help.de = "Setzt das Admin Passwort"
-    type = "password"
-
 [resources]
     # See the packaging documentation for the full set
     # of explanation regarding the behavior and properties for each of those
@@ -86,8 +74,7 @@ ram.runtime = "2G"
     # This will pre-fetch the asset which can then be deployed during the install/upgrade scripts with :
     #    ynh_setup_source --dest_dir="$install_dir"
     # You can also define other assets than "main" and add --source_id="foobar" in the previous command
-    url = ""
-    sha256 = ""
+    url = [install.foundry_url] 
 
     # These infos are used by https://github.com/YunoHost/apps_tools/blob/main/autoupdate_app_sources/autoupdate_app_sources.py
     # to auto-update the previous asset urls and sha256sum + manifest version
