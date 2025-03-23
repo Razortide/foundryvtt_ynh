@@ -13,8 +13,7 @@ version = "1.0~ynh1"
 maintainers = ["razortide"]
 
 [upstream]
-# NB: Only the "license" key is mandatory. Remove entries for which there's no relevant data
-license = "Proprietary" # you can see the available licenses identifiers list here: https://spdx.org/licenses/
+license = "proprietary" # you can see the available licenses identifiers list here: https://spdx.org/licenses/
 website = "https://foundryvtt.com"
 demo = "https://demo.foundryvtt.com/join"
 admindoc = "https://foundryvtt.com/article/tutorial"
