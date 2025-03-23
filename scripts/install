@@ -27,14 +27,6 @@ source /usr/share/yunohost/helpers
 ### or 'example__2', '__3'... for multi-instance installs)
 
 #=================================================
-# INITIALIZE AND STORE SETTINGS
-#=================================================
-
-# If you need to, you can define custom settings
-# (or remove this section entirely if not relevant for you)
-foundry_url = $YNH_APP_ARG_FOUNDRY_URL
-
-#=================================================
 # INSTALL NODE.JS (IF NOT INSTALLED ALREADY)
 #=================================================
 ynh_script_progression "Installing Node.js..."
@@ -50,8 +42,11 @@ ynh_script_progression "Setting up source files..."
 ### downloaded from an upstream source, like a git repository.
 ### `ynh_setup_source` use the file manifest.toml
 
-# Download, check integrity, uncompress and patch the source from manifest.toml
-ynh_setup_source --dest_dir="$install_dir"
+# Download, uncompress and patch the source from manifest.toml
+mkdir -p "$install_dir"
+curl -o "$install_dir/foundry.zip" "$foundry_url"
+unzip "$install_dir/foundry.zip" -d "$install_dir"
+rm "$install_dir/foundry.zip"
 
 ### $install_dir will automatically be initialized with some decent
 ### permission by default... however, you may need to recursively reapply
